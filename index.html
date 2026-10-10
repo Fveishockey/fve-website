@@ -1,12 +1,311 @@
-<nav>
-    index.htmlStart</a>
-    ueber-uns.htmlÜber uns</a>
-    laufschule.htmlLaufschule</a>
-    spenden.htmlSpenden</a>
-  </nav>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h1>Förderverein für den Eishockeynachwuchs Ulm & Lkr. Neu-Ulm e.V.</h1>
+<title>Förderverein für den Eishockeynachwuchs Ulm & Lkr. Neu-Ulm e. V.</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.6;
+    color:#222;
+}
+
+header{
+    background:#000;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+    color:#e30613;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#e30613;
+}
+
+.hero{
+    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1515703407324-5f753afd8be8?auto=format&fit=crop&w=1500&q=80');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    max-width:800px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    background:#e30613;
+    color:white;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#e30613;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#f5f5f5;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.highlight{
+    background:#e30613;
+    color:white;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer a{
+    color:#e30613;
+    text-decoration:none;
+}
+
+@media(max-width:768px){
+
+.topbar{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+
+<div class="topbar">
+
+<div class="logo">FvE Ulm & Neu-Ulm</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Start</a></li>
+<li>ueber-uns.htmlÜber uns</a></li>
+<li>laufschule.htmlLaufschule</a></li>
+<li>spenden.htmlSpenden</a></li>
+</ul>
+</nav>
+
+</div>
+</div>
+</header>
+
+<section class="hero">
+
+<h1>Förderverein für den Eishockeynachwuchs Ulm & Lkr. Neu-Ulm e. V.</h1>
 
 <p>
-Wir fördern den Eishockeynachwuchs in Ulm und im Landkreis Neu-Ulm.
+Wir unterstützen Kinder und Jugendliche auf ihrem Weg im Eishockeysport.
+Mit Spenden, Förderung und ehrenamtlichem Engagement schaffen wir
+beste Voraussetzungen für die Nachwuchsarbeit in unserer Region.
 </p>
+
+spenden.htmlJetzt unterstützen</a>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Unser Auftrag</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Nachwuchsförderung</h3>
+<p>
+Unterstützung von Kindern und Jugendlichen durch finanzielle
+Förderung, Ausrüstung und Projekte.
+</p>
+</div>
+
+<div class="card">
+<h3>Gemeinschaft</h3>
+<p>
+Wir stärken Teamgeist, Fairness und sportliche Entwicklung
+des Eishockeynachwuchses.
+</p>
+</div>
+
+<div class="card">
+<h3>Zukunft gestalten</h3>
+<p>
+Investitionen in Ausbildung, Veranstaltungen und nachhaltige
+Nachwuchsarbeit.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section style="background:#f8f8f8;">
+
+<div class="container">
+
+<h2 class="section-title">Laufschule</h2>
+
+<p style="text-align:center;max-width:800px;margin:auto;">
+Die Laufschule bietet Kindern einen einfachen Einstieg auf das Eis.
+Spielerisch werden erste Erfahrungen gesammelt und Grundlagen
+des Eislaufens vermittelt.
+</p>
+
+<div style="text-align:center;">
+laufschule.htmlMehr erfahren</a>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Aktuelle Förderprojekte</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Trainingsmaterial</h3>
+<p>
+Anschaffung von Trainingshilfen und Ausrüstung für den Nachwuchs.
+</p>
+</div>
+
+<div class="card">
+<h3>Turnierfahrten</h3>
+<p>
+Unterstützung von Mannschaften bei Auswärtsturnieren.
+</p>
+</div>
+
+<div class="card">
+<h3>Nachwuchsevents</h3>
+<p>
+Organisation von Aktionen und Veranstaltungen für junge Spieler.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Spenden helfen direkt</h2>
+
+<div class="card highlight">
+
+<h3>Gemeinsam Zukunft schaffen</h3>
+
+<p>
+Mit Ihrer Unterstützung fördern wir Kinder und Jugendliche
+im Eishockeysport und ermöglichen wichtige Projekte,
+Ausrüstung und Ausbildung.
+</p>
+
+<br>
+
+<p>
+Jeder Beitrag hilft.
+</p>
+
+spenden.html
+Zur Spendenseite
+</a>
+
+</div>
+
