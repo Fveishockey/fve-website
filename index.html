@@ -1,322 +1,366 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Förderverein für den Eishockeynachwuchs Ulm & Lkr. Neu-Ulm e. V.</title>
+    <title>Förderverein für den Eishockeynachwuchs Ulm & Lkr. Neu-Ulm e. V.</title>
 
-<div class="logo">
-    <img src="assets/images/logo.png"
-         alt="Vereinslogo"
-         class="logo-img">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-    <div class="logo-text">
-        <strong>FvE</strong><br>
-        Förderverein für den Eishockeynachwuchs
-    </div>
-</div>
-    
-<style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            line-height:1.6;
+            color:#222;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        header{
+            background:#000;
+            color:white;
+        }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.6;
-    color:#222;
-}
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
 
-header{
-    background:#000;
-    color:white;
-}
+        .topbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 0;
+        }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
 
-.topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 0;
-}
+        .logo-img{
+            height:80px;
+            width:auto;
+        }
 
-.logo{
-    font-size:1.5rem;
-    font-weight:bold;
-    color:#e30613;
-}
+        .logo-text{
+            color:white;
+            font-size:1rem;
+            line-height:1.3;
+        }
 
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:20px;
-}
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:20px;
+        }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
 
-nav a:hover{
-    color:#e30613;
-}
+        nav a:hover{
+            color:#e30613;
+        }
 
-.hero{
-    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-    url('https://images.unsplash.com/photo-1515703407324-5f753afd8be8?auto=format&fit=crop&w=1500&q=80');
-    background-size:cover;
-    background-position:center;
-    color:white;
-    text-align:center;
-    padding:120px 20px;
-}
+        .hero{
+            background:
+            linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+            url('https://images.unsplash.com/photo-1515703407324-5f753afd8be8?auto=format&fit=crop&w=1500&q=80');
 
-.hero h1{
-    font-size:3rem;
-    margin-bottom:20px;
-}
+            background-size:cover;
+            background-position:center;
+            color:white;
+            text-align:center;
+            padding:120px 20px;
+        }
 
-.hero p{
-    font-size:1.2rem;
-    max-width:800px;
-    margin:auto;
-}
+        .hero h1{
+            font-size:3rem;
+            margin-bottom:20px;
+        }
 
-.btn{
-    display:inline-block;
-    margin-top:30px;
-    background:#e30613;
-    color:white;
-    padding:15px 30px;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
-}
+        .hero p{
+            font-size:1.2rem;
+            max-width:800px;
+            margin:auto;
+        }
 
-section{
-    padding:80px 0;
-}
+        .btn{
+            display:inline-block;
+            margin-top:30px;
+            background:#e30613;
+            color:white;
+            padding:15px 30px;
+            text-decoration:none;
+            border-radius:5px;
+            font-weight:bold;
+        }
 
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-    color:#e30613;
-}
+        .btn:hover{
+            background:#b5000f;
+        }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+        section{
+            padding:80px 0;
+        }
 
-.card{
-    background:#f5f5f5;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
+        .section-title{
+            text-align:center;
+            margin-bottom:40px;
+            color:#e30613;
+        }
 
-.highlight{
-    background:#e30613;
-    color:white;
-}
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:25px;
+        }
 
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-}
+        .card{
+            background:#f5f5f5;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
 
-footer a{
-    color:#e30613;
-    text-decoration:none;
-}
+        .highlight{
+            background:#e30613;
+            color:white;
+        }
 
-@media(max-width:768px){
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:40px 20px;
+        }
 
-.topbar{
-    flex-direction:column;
-    gap:20px;
-}
+        footer a{
+            color:#e30613;
+            text-decoration:none;
+        }
 
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-}
+        @media(max-width:768px){
 
-.hero h1{
-    font-size:2rem;
-}
+            .topbar{
+                flex-direction:column;
+                gap:20px;
+            }
 
-}
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
 
-</style>
+            .hero h1{
+                font-size:2rem;
+            }
+
+            .logo{
+                flex-direction:column;
+                text-align:center;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
-<div class="container">
+    <div class="container">
 
-<div class="topbar">
+        <div class="topbar">
 
-<div class="logo">FvE Ulm & Neu-Ulm</div>
+            <div class="logo">
+                assets/images/logo.png
 
-<nav>
-<ul>
-<li><a href="index.html">Start</a></li>
-<li>ueber-uns.htmlÜber uns</a></li>
-<li>laufschule.htmlLaufschule</a></li>
-<li>spenden.htmlSpenden</a></li>
-</ul>
-</nav>
+                <div class="logo-text">
+                    <strong>FvE</strong><br>
+                    Förderverein für den Eishockeynachwuchs<br>
+                    Ulm & Lkr. Neu-Ulm e. V.
+                </div>
+            </div>
 
-</div>
-</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li>ueber-uns.htmlÜber uns</a></li>
+                    <li>laufschule.htmlLaufschule</a></li>
+                    <li>projekte.htmlProjekte</a></li>
+                    <li><a href="spenden.html">Spenden</a></li>
+                    <li>kontakt.htmlKontakt</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
 </header>
 
 <section class="hero">
 
-<h1>Förderverein für den Eishockeynachwuchs Ulm & Lkr. Neu-Ulm e. V.</h1>
+    <h1>
+        Förderverein für den Eishockeynachwuchs
+        Ulm & Lkr. Neu-Ulm e. V.
+    </h1>
 
-<p>
-Wir unterstützen Kinder und Jugendliche auf ihrem Weg im Eishockeysport.
-Mit Spenden, Förderung und ehrenamtlichem Engagement schaffen wir
-beste Voraussetzungen für die Nachwuchsarbeit in unserer Region.
-</p>
+    <p>
+        Wir unterstützen Kinder und Jugendliche auf ihrem Weg im
+        Eishockeysport. Mit Spenden, Förderung und ehrenamtlichem
+        Engagement schaffen wir beste Voraussetzungen für die
+        Nachwuchsarbeit in unserer Region.
+    </p>
 
-spenden.htmlJetzt unterstützen</a>
+    <a href="spenden.html" class="btn">
+        Jetzt unterstützen
+    </a>
 
 </section>
 
 <section>
+    <div class="container">
 
-<div class="container">
+        <h2 class="section-title">Unser Auftrag</h2>
 
-<h2 class="section-title">Unser Auftrag</h2>
+        <div class="cards">
 
-<div class="cards">
+            <div class="card">
+                <h3>Nachwuchsförderung</h3>
+                <p>
+                    Unterstützung von Kindern und Jugendlichen durch
+                    finanzielle Förderung, Ausrüstung und Projekte.
+                </p>
+            </div>
 
-<div class="card">
-<h3>Nachwuchsförderung</h3>
-<p>
-Unterstützung von Kindern und Jugendlichen durch finanzielle
-Förderung, Ausrüstung und Projekte.
-</p>
-</div>
+            <div class="card">
+                <h3>Gemeinschaft</h3>
+                <p>
+                    Wir stärken Teamgeist, Fairness und die sportliche
+                    Entwicklung junger Eishockeyspieler.
+                </p>
+            </div>
 
-<div class="card">
-<h3>Gemeinschaft</h3>
-<p>
-Wir stärken Teamgeist, Fairness und sportliche Entwicklung
-des Eishockeynachwuchses.
-</p>
-</div>
+            <div class="card">
+                <h3>Zukunft gestalten</h3>
+                <p>
+                    Investitionen in Ausbildung, Veranstaltungen und
+                    nachhaltige Nachwuchsarbeit.
+                </p>
+            </div>
 
-<div class="card">
-<h3>Zukunft gestalten</h3>
-<p>
-Investitionen in Ausbildung, Veranstaltungen und nachhaltige
-Nachwuchsarbeit.
-</p>
-</div>
+        </div>
 
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <section style="background:#f8f8f8;">
+    <div class="container">
 
-<div class="container">
+        <h2 class="section-title">Laufschule</h2>
 
-<h2 class="section-title">Laufschule</h2>
+        <p style="text-align:center; max-width:800px; margin:auto;">
+            Die Laufschule bietet Kindern einen einfachen Einstieg auf das Eis.
+            Spielerisch werden erste Erfahrungen gesammelt und die Grundlagen
+            des Eislaufens vermittelt.
+        </p>
 
-<p style="text-align:center;max-width:800px;margin:auto;">
-Die Laufschule bietet Kindern einen einfachen Einstieg auf das Eis.
-Spielerisch werden erste Erfahrungen gesammelt und Grundlagen
-des Eislaufens vermittelt.
-</p>
+        <div style="text-align:center; margin-top:25px;">
+            laufschule.html
+                Mehr erfahren
+            </a>
+        </div>
 
-<div style="text-align:center;">
-laufschule.htmlMehr erfahren</a>
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <section>
+    <div class="container">
 
-<div class="container">
+        <h2 class="section-title">Aktuelle Förderprojekte</h2>
 
-<h2 class="section-title">Aktuelle Förderprojekte</h2>
+        <div class="cards">
 
-<div class="cards">
+            <div class="card">
+                <h3>Trainingsmaterial</h3>
+                <p>
+                    Anschaffung von Trainingshilfen und Ausrüstung
+                    für den Nachwuchs.
+                </p>
+            </div>
 
-<div class="card">
-<h3>Trainingsmaterial</h3>
-<p>
-Anschaffung von Trainingshilfen und Ausrüstung für den Nachwuchs.
-</p>
-</div>
+            <div class="card">
+                <h3>Turnierfahrten</h3>
+                <p>
+                    Unterstützung von Mannschaften bei
+                    Auswärtsturnieren.
+                </p>
+            </div>
 
-<div class="card">
-<h3>Turnierfahrten</h3>
-<p>
-Unterstützung von Mannschaften bei Auswärtsturnieren.
-</p>
-</div>
+            <div class="card">
+                <h3>Nachwuchsevents</h3>
+                <p>
+                    Organisation von Veranstaltungen und Aktionen
+                    für junge Spieler.
+                </p>
+            </div>
 
-<div class="card">
-<h3>Nachwuchsevents</h3>
-<p>
-Organisation von Aktionen und Veranstaltungen für junge Spieler.
-</p>
-</div>
+        </div>
 
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <section>
+    <div class="container">
 
-<div class="container">
+        <h2 class="section-title">Spenden helfen direkt</h2>
 
-<h2 class="section-title">Spenden helfen direkt</h2>
+        <div class="card highlight">
 
-<div class="card highlight">
+            <h3>Gemeinsam Zukunft schaffen</h3>
 
-<h3>Gemeinsam Zukunft schaffen</h3>
+            <p>
+                Mit Ihrer Unterstützung fördern wir Kinder und Jugendliche
+                im Eishockeysport und ermöglichen wichtige Projekte,
+                Ausrüstung und Ausbildung.
+            </p>
 
-<p>
-Mit Ihrer Unterstützung fördern wir Kinder und Jugendliche
-im Eishockeysport und ermöglichen wichtige Projekte,
-Ausrüstung und Ausbildung.
-</p>
+            <br>
 
-<br>
+            <p>Jeder Beitrag hilft.</p>
 
-<p>
-Jeder Beitrag hilft.
-</p>
+            <br>
 
-spenden.html
-Zur Spendenseite
-</a>
+            <a href="spenden.html" class="btn">
+                Zur Spendenseite
+            </a>
 
-</div>
+        </div>
 
+    </div>
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Förderverein für den Eishockeynachwuchs
+        Ulm & Lkr. Neu-Ulm e. V.
+    </p>
+
+    <p style="margin-top:10px;">
+        impressum.htmlImpressum</a> |
+        datenschutz.htmlDatenschutz</a> |
+        kontakt.htmlKontakt</a>
+    </p>
+
+</footer>
+
+</body>
+</html>
