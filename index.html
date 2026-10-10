@@ -1,1 +1,524 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><title>FvE</title></head><body><h1>Startseite</h1></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Förderverein für den Eishockeynachwuchs Ulm &amp; Lkr. Neu-Ulm e. V.</title>
+    <meta name="description" content="Der Förderverein für den Eishockeynachwuchs Ulm &amp; Lkr. Neu-Ulm e. V. unterstützt Kinder und Jugendliche im Eishockey – mit Laufschule, Förderprojekten und Spenden.">
+    <meta name="theme-color" content="#0b1d33">
+
+    <style>
+        :root{
+            --navy:#0b1d33;
+            --navy-2:#13335a;
+            --red:#d6001c;
+            --red-dark:#a80016;
+            --ice:#eaf3fb;
+            --ice-2:#d4e6f5;
+            --text:#1c2733;
+            --muted:#5a6b7b;
+            --white:#fff;
+            --radius:14px;
+            --shadow:0 8px 28px rgba(11,29,51,.12);
+        }
+
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+
+        body{
+            font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+            line-height:1.65;
+            color:var(--text);
+            background:var(--white);
+        }
+
+        img{max-width:100%;display:block}
+        a{color:inherit}
+
+        .container{width:90%;max-width:1180px;margin:0 auto}
+
+        .skip-link{
+            position:absolute;left:-999px;top:0;
+            background:var(--red);color:#fff;padding:10px 16px;z-index:1000;
+        }
+        .skip-link:focus{left:10px;top:10px}
+
+        /* ---------- Header ---------- */
+        header{
+            position:sticky;top:0;z-index:100;
+            background:rgba(11,29,51,.97);
+            backdrop-filter:blur(8px);
+            border-bottom:3px solid var(--red);
+        }
+
+        .topbar{
+            display:flex;justify-content:space-between;align-items:center;
+            padding:12px 0;gap:20px;
+        }
+
+        .logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff}
+        .logo-img{height:56px;width:auto}
+        .logo-text{font-size:.82rem;line-height:1.3;color:#cfdceb}
+        .logo-text strong{display:block;font-size:1.2rem;color:#fff;letter-spacing:.04em}
+
+        nav ul{display:flex;list-style:none;gap:4px;align-items:center}
+        nav a{
+            color:#fff;text-decoration:none;font-weight:600;font-size:.93rem;
+            padding:9px 12px;border-radius:8px;transition:.2s;display:block;
+        }
+        nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.12)}
+        nav a.active{color:#fff;box-shadow:inset 0 -3px 0 var(--red)}
+        nav a.cta{background:var(--red);margin-left:6px}
+        nav a.cta:hover{background:var(--red-dark)}
+
+        .menu-toggle{
+            display:none;background:none;border:2px solid #fff;color:#fff;
+            border-radius:8px;padding:8px 12px;font-size:1rem;cursor:pointer;font-weight:700;
+        }
+
+        /* ---------- Hero ---------- */
+        .hero{
+            position:relative;overflow:hidden;color:#fff;text-align:center;
+            padding:130px 20px 150px;
+            background:
+                radial-gradient(circle at 20% 20%,rgba(255,255,255,.10),transparent 40%),
+                radial-gradient(circle at 85% 80%,rgba(214,0,28,.30),transparent 45%),
+                linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
+        }
+        /* Eisfeld-Linien als Deko */
+        .hero::before{
+            content:"";position:absolute;inset:0;
+            background:
+                repeating-linear-gradient(115deg,transparent 0 60px,rgba(255,255,255,.035) 60px 62px);
+            pointer-events:none;
+        }
+        .hero::after{
+            content:"";position:absolute;left:0;right:0;bottom:-1px;height:70px;
+            background:var(--white);
+            clip-path:polygon(0 100%,100% 100%,100% 0,75% 55%,45% 15%,20% 60%,0 20%);
+        }
+        .hero .container{position:relative;z-index:1}
+        .eyebrow{
+            display:inline-block;background:rgba(255,255,255,.12);
+            border:1px solid rgba(255,255,255,.25);
+            padding:6px 16px;border-radius:99px;font-size:.85rem;
+            letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;
+        }
+        .hero h1{
+            font-size:clamp(2rem,5vw,3.6rem);line-height:1.15;margin-bottom:22px;
+            letter-spacing:-.01em;
+        }
+        .hero h1 span{color:#ff6a7c}
+        .hero p{font-size:1.15rem;max-width:760px;margin:0 auto;color:#dbe7f3}
+        .hero-actions{margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+        .btn{
+            display:inline-block;background:var(--red);color:#fff;
+            padding:14px 30px;border-radius:10px;text-decoration:none;
+            font-weight:700;transition:.2s;border:2px solid var(--red);
+        }
+        .btn:hover{background:var(--red-dark);border-color:var(--red-dark);transform:translateY(-2px)}
+        .btn-outline{background:transparent;border-color:#fff}
+        .btn-outline:hover{background:#fff;color:var(--navy);border-color:#fff}
+        .btn-dark{background:var(--navy);border-color:var(--navy)}
+        .btn-dark:hover{background:var(--navy-2);border-color:var(--navy-2)}
+
+        /* ---------- Sections ---------- */
+        section{padding:90px 0}
+        .bg-ice{background:var(--ice)}
+
+        .section-head{text-align:center;max-width:720px;margin:0 auto 50px}
+        .section-head .kicker{
+            color:var(--red);font-weight:700;text-transform:uppercase;
+            letter-spacing:.12em;font-size:.82rem;
+        }
+        .section-head h2{
+            font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--navy);margin:8px 0 14px;line-height:1.2;
+        }
+        .section-head p{color:var(--muted)}
+
+        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+
+        .card{
+            background:#fff;padding:32px 28px;border-radius:var(--radius);
+            box-shadow:var(--shadow);border-top:4px solid var(--red);
+            transition:.25s;
+        }
+        .card:hover{transform:translateY(-6px)}
+        .card .icon{
+            width:54px;height:54px;border-radius:14px;background:var(--ice);
+            display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:18px;
+        }
+        .card h3{color:var(--navy);margin-bottom:10px;font-size:1.2rem}
+        .card p{color:var(--muted);font-size:.97rem}
+
+        /* ---------- Laufschule ---------- */
+        .split{
+            display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+        }
+        .split h2{font-size:clamp(1.7rem,3.5vw,2.3rem);color:var(--navy);margin:8px 0 18px;line-height:1.2}
+        .split p{color:var(--muted);margin-bottom:18px}
+        .checklist{list-style:none;margin:20px 0 28px}
+        .checklist li{padding-left:34px;position:relative;margin-bottom:10px;font-weight:500}
+        .checklist li::before{
+            content:"✓";position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;
+            background:var(--red);color:#fff;font-size:.8rem;display:flex;align-items:center;justify-content:center;
+        }
+        .visual{
+            min-height:360px;border-radius:var(--radius);box-shadow:var(--shadow);
+            background:
+                radial-gradient(circle at 50% 45%,#fff 0 22%,transparent 23%),
+                radial-gradient(circle at 50% 45%,transparent 0 30%,rgba(214,0,28,.9) 31% 33%,transparent 34%),
+                linear-gradient(160deg,var(--ice-2),#f7fbff);
+            display:flex;align-items:center;justify-content:center;
+            font-size:6rem;position:relative;overflow:hidden;
+        }
+        .visual::after{
+            content:"";position:absolute;left:0;right:0;top:50%;height:4px;background:rgba(214,0,28,.25);
+        }
+
+        /* ---------- Aktuelles ---------- */
+        .news-card{
+            background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
+            display:flex;flex-direction:column;transition:.25s;
+        }
+        .news-card:hover{transform:translateY(-6px)}
+        .news-thumb{
+            height:150px;background:linear-gradient(135deg,var(--navy),var(--navy-2));
+            display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff;
+        }
+        .news-body{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
+        .news-date{font-size:.8rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+        .news-body h3{color:var(--navy);margin:8px 0 10px;font-size:1.15rem}
+        .news-body p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
+        .news-body a{margin-top:auto;font-weight:700;color:var(--red);text-decoration:none}
+        .news-body a:hover{text-decoration:underline}
+        .center{text-align:center;margin-top:40px}
+
+        /* ---------- Spenden ---------- */
+        .donate{
+            background:linear-gradient(135deg,var(--red) 0%,#8f0014 100%);
+            color:#fff;border-radius:22px;padding:64px 40px;text-align:center;
+            box-shadow:0 18px 50px rgba(214,0,28,.28);position:relative;overflow:hidden;
+        }
+        .donate::before{
+            content:"";position:absolute;inset:0;
+            background:repeating-linear-gradient(115deg,transparent 0 50px,rgba(255,255,255,.05) 50px 52px);
+        }
+        .donate>*{position:relative}
+        .donate h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:16px}
+        .donate p{max-width:640px;margin:0 auto 12px;color:#ffe3e7}
+        .donate .btn{background:#fff;color:var(--red);border-color:#fff;margin-top:22px}
+        .donate .btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+        /* ---------- Downloads-Teaser ---------- */
+        .download-row{
+            display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+            background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:34px 38px;
+            border-left:6px solid var(--red);
+        }
+        .download-row h3{color:var(--navy);font-size:1.3rem;margin-bottom:6px}
+        .download-row p{color:var(--muted)}
+
+        /* ---------- Footer ---------- */
+        footer{background:var(--navy);color:#cfdceb;padding:64px 0 28px;border-top:4px solid var(--red)}
+        .footer-grid{
+            display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;
+        }
+        footer h4{color:#fff;margin-bottom:14px;font-size:1rem}
+        footer ul{list-style:none}
+        footer li{margin-bottom:8px}
+        footer a{text-decoration:none;color:#cfdceb}
+        footer a:hover{color:#fff;text-decoration:underline}
+        .footer-bottom{
+            border-top:1px solid rgba(255,255,255,.14);padding-top:22px;
+            font-size:.88rem;text-align:center;
+        }
+
+        :focus-visible{outline:3px solid #ff6a7c;outline-offset:2px}
+
+        /* ---------- Responsive ---------- */
+        @media(max-width:960px){
+            .menu-toggle{display:block}
+            nav{
+                position:absolute;left:0;right:0;top:100%;background:var(--navy);
+                max-height:0;overflow:hidden;transition:max-height .3s ease;
+            }
+            nav.open{max-height:520px;border-bottom:3px solid var(--red)}
+            nav ul{flex-direction:column;align-items:stretch;padding:14px 5%;gap:2px}
+            nav a.cta{margin:8px 0 0;text-align:center}
+            .split{grid-template-columns:1fr;gap:34px}
+            .footer-grid{grid-template-columns:1fr}
+        }
+        @media(max-width:560px){
+            section{padding:64px 0}
+            .hero{padding:90px 20px 120px}
+            .logo-text{display:none}
+            .donate{padding:44px 22px}
+        }
+        @media(prefers-reduced-motion:reduce){
+            *{transition:none!important;scroll-behavior:auto!important}
+        }
+    </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+<header>
+    <div class="container">
+        <div class="topbar">
+
+            <a href="index.html" class="logo" aria-label="Startseite Förderverein">
+                <img class="logo-img" src="assets/images/logo.png" alt="Logo des Fördervereins" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <strong>FvE</strong>
+                    Förderverein für den Eishockeynachwuchs<br>
+                    Ulm &amp; Lkr. Neu-Ulm e. V.
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰ Menü</button>
+
+            <nav id="mainNav" aria-label="Hauptnavigation">
+                <ul>
+                    <li><a href="index.html" class="active">Start</a></li>
+                    <li><a href="aktuelles.html">Aktuelles</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="laufschule.html">Laufschule</a></li>
+                    <li><a href="downloads.html">Downloads</a></li>
+                    <li><a href="spenden.html" class="cta">Spenden</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+<main id="inhalt">
+
+    <!-- HERO -->
+    <section class="hero" style="padding-bottom:150px">
+        <div class="container">
+            <span class="eyebrow">Gemeinsam für den Nachwuchs</span>
+            <h1>Wir fördern den<br><span>Eishockeynachwuchs</span><br>in Ulm &amp; Neu-Ulm</h1>
+            <p>
+                Mit Spenden, Förderung und ehrenamtlichem Engagement schaffen wir beste
+                Voraussetzungen für Kinder und Jugendliche, die in unserer Region
+                Eishockey spielen.
+            </p>
+            <div class="hero-actions">
+                <a href="spenden.html" class="btn">Jetzt unterstützen</a>
+                <a href="laufschule.html" class="btn btn-outline">Zur Laufschule</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUFTRAG -->
+    <section>
+        <div class="container">
+            <div class="section-head">
+                <span class="kicker">Unser Auftrag</span>
+                <h2>Wofür wir uns einsetzen</h2>
+                <p>Als gemeinnütziger Verein unterstützen wir junge Eishockeyspielerinnen und -spieler – sportlich, menschlich und finanziell.</p>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="icon" aria-hidden="true">🏒</div>
+                    <h3>Nachwuchsförderung</h3>
+                    <p>Wir unterstützen Kinder und Jugendliche durch finanzielle Förderung, Ausrüstung und gezielte Projekte.</p>
+                </article>
+                <article class="card">
+                    <div class="icon" aria-hidden="true">🤝</div>
+                    <h3>Gemeinschaft</h3>
+                    <p>Teamgeist, Fairness und Respekt stehen im Mittelpunkt – auf und neben dem Eis.</p>
+                </article>
+                <article class="card">
+                    <div class="icon" aria-hidden="true">🚀</div>
+                    <h3>Zukunft gestalten</h3>
+                    <p>Wir investieren in Ausbildung, Veranstaltungen und nachhaltige Nachwuchsarbeit in der Region.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAUFSCHULE -->
+    <section class="bg-ice">
+        <div class="container split">
+            <div>
+                <span class="kicker" style="color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.82rem">Laufschule</span>
+                <h2>Der erste Schritt aufs Eis</h2>
+                <p>
+                    Die Laufschule bietet Kindern einen einfachen und spielerischen Einstieg.
+                    Erste Erfahrungen auf dem Eis werden gesammelt und die Grundlagen des
+                    Eislaufens kindgerecht vermittelt.
+                </p>
+                <ul class="checklist">
+                    <li>Spielerischer Einstieg für Anfänger</li>
+                    <li>Grundlagen des Eislaufens</li>
+                    <li>Freude an Bewegung und Teamsport</li>
+                </ul>
+                <a href="laufschule.html" class="btn btn-dark">Mehr erfahren</a>
+            </div>
+            <div class="visual" aria-hidden="true">⛸️</div>
+        </div>
+    </section>
+
+    <!-- FÖRDERPROJEKTE -->
+    <section>
+        <div class="container">
+            <div class="section-head">
+                <span class="kicker">Projekte</span>
+                <h2>Aktuelle Förderprojekte</h2>
+                <p>Das bewegen wir mit Ihrer Unterstützung.</p>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="icon" aria-hidden="true">🎽</div>
+                    <h3>Trainingsmaterial</h3>
+                    <p>Anschaffung von Trainingshilfen und Ausrüstung für den Nachwuchs.</p>
+                </article>
+                <article class="card">
+                    <div class="icon" aria-hidden="true">🚌</div>
+                    <h3>Turnierfahrten</h3>
+                    <p>Unterstützung von Mannschaften bei Auswärtsturnieren.</p>
+                </article>
+                <article class="card">
+                    <div class="icon" aria-hidden="true">🎉</div>
+                    <h3>Nachwuchsevents</h3>
+                    <p>Organisation von Veranstaltungen und Aktionen für junge Spieler.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- AKTUELLES -->
+    <section class="bg-ice">
+        <div class="container">
+            <div class="section-head">
+                <span class="kicker">Aktuelles</span>
+                <h2>Neuigkeiten aus dem Verein</h2>
+                <p>Termine, Berichte und Aktionen auf einen Blick.</p>
+            </div>
+
+            <!-- Platzhalter: Texte und Datum bitte anpassen -->
+            <div class="cards">
+                <article class="news-card">
+                    <div class="news-thumb" aria-hidden="true">📣</div>
+                    <div class="news-body">
+                        <span class="news-date">Oktober 2026</span>
+                        <h3>Neue Vereinswebseite online</h3>
+                        <p>Hier finden Sie ab sofort alle Informationen rund um den Förderverein und unsere Projekte.</p>
+                        <a href="aktuelles.html">Weiterlesen →</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-thumb" aria-hidden="true">⛸️</div>
+                    <div class="news-body">
+                        <span class="news-date">Saison 2026/27</span>
+                        <h3>Laufschule: Informationen &amp; Termine</h3>
+                        <p>Alle Details zu den aktuellen Angeboten der Laufschule finden Sie auf unserer Laufschul-Seite.</p>
+                        <a href="laufschule.html">Weiterlesen →</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-thumb" aria-hidden="true">❤️</div>
+                    <div class="news-body">
+                        <span class="news-date">Unterstützen</span>
+                        <h3>Jeder Beitrag zählt</h3>
+                        <p>Erfahren Sie, wie Sie mit einer Spende oder Mitgliedschaft den Nachwuchs fördern können.</p>
+                        <a href="spenden.html">Weiterlesen →</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="center">
+                <a href="aktuelles.html" class="btn btn-dark">Alle Neuigkeiten</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPENDEN -->
+    <section>
+        <div class="container">
+            <div class="donate">
+                <h2>Spenden helfen direkt</h2>
+                <p>
+                    Mit Ihrer Unterstützung fördern wir Kinder und Jugendliche im
+                    Eishockeysport und ermöglichen wichtige Projekte, Ausrüstung und Ausbildung.
+                </p>
+                <p><strong>Jeder Beitrag hilft.</strong></p>
+                <a href="spenden.html" class="btn">Zur Spendenseite</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section class="bg-ice" style="padding:60px 0">
+        <div class="container">
+            <div class="download-row">
+                <div>
+                    <h3>📄 Downloads</h3>
+                    <p>Satzung, Beitrittserklärung und weitere Dokumente zum Herunterladen.</p>
+                </div>
+                <a href="downloads.html" class="btn btn-dark">Zu den Downloads</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>Förderverein für den Eishockeynachwuchs<br>Ulm &amp; Lkr. Neu-Ulm e. V.</h4>
+                <p>Gemeinsam für den Eishockeynachwuchs in unserer Region.</p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="aktuelles.html">Aktuelles</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="laufschule.html">Laufschule</a></li>
+                    <li><a href="downloads.html">Downloads</a></li>
+                    <li><a href="spenden.html">Spenden</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Rechtliches</h4>
+                <ul>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Förderverein für den Eishockeynachwuchs Ulm &amp; Lkr. Neu-Ulm e. V.
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function(){
+        var btn = document.getElementById('menuToggle');
+        var nav = document.getElementById('mainNav');
+        btn.addEventListener('click', function(){
+            var open = nav.classList.toggle('open');
+            btn.setAttribute('aria-expanded', open);
+        });
+        nav.querySelectorAll('a').forEach(function(a){
+            a.addEventListener('click', function(){
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    })();
+</script>
+
+</body>
+</html>
